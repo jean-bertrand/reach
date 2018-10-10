@@ -10,12 +10,13 @@ public_folder: "/images" # The src attribute for uploaded media will begin with 
 collections:
   - name: "guide" # Used in routes, e.g., /admin/collections/blog
     label: "User Guide" # Used in the UI
-    folder: "content/guides" # The path to the folder where the documents are stored
+    folder: "content/user-guide/articles" # The path to the folder where the documents are stored
     filter:
       field: language
       value: en
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    format: 'json'
     fields: # The fields for each document, usually in front matter
       - {label: "Layout", name: "layout", widget: "hidden", default: "guide"}
       - {label: "Title", name: "title", widget: "string"}
